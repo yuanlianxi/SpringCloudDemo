@@ -1,0 +1,20 @@
+# eureka.client.registerWithEureka 锛氳〃绀烘槸鍚﹀皢鑷繁娉ㄥ唽鍒癊ureka Server锛岄粯璁や负true銆傜敱浜庡綋鍓嶈繖涓簲鐢ㄥ氨鏄疎ureka Server锛屾晠鑰岃涓篺alse  
+# eureka.client.fetchRegistry 锛氳〃绀烘槸鍚︿粠Eureka Server鑾峰彇娉ㄥ唽淇℃伅锛岄粯璁や负true銆傚洜涓鸿繖鏄竴涓崟鐐圭殑Eureka Server锛屼笉闇�瑕佸悓姝ュ叾浠栫殑Eureka Server鑺傜偣鐨勬暟鎹紝鏁呰�岃涓篺alse銆�  
+# eureka.client.serviceUrl.defaultZone 锛氳缃笌Eureka Server浜や簰鐨勫湴鍧�锛屾煡璇㈡湇鍔″拰娉ㄥ唽鏈嶅姟閮介渶瑕佷緷璧栬繖涓湴鍧�銆傞粯璁ゆ槸http://localhost:8761/eureka 锛涘涓湴鍧�鍙娇鐢� , 鍒嗛殧銆�  
+server:
+  port: 8761
+  enable-self-preservation: false
+  eviction-interval-timer-in-ms: 4000
+spring: 
+  view: 
+    prefix: /WEB-INF/jsp/
+    suffix: .jsp
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
